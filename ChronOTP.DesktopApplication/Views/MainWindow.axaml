@@ -1,0 +1,104 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:ChronOTP.DesktopApplication.ViewModels"
+        mc:Ignorable="d" 
+        Width="500"
+        Height="650"
+        MinWidth="300"
+        MinHeight="450"
+        d:DesignWidth="500" 
+        d:DesignHeight="650"
+        x:Class="ChronOTP.DesktopApplication.Views.MainWindow"
+        x:DataType="viewModels:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="ChronOTP"
+        Loaded="Control_OnLoaded">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid ColumnDefinitions="16,*,16"
+          RowDefinitions="16,*,16"
+          Background="#FAFAFA">
+        <ListBox Grid.Row="1"
+                 Grid.Column="1"
+                 Background="Transparent"
+                 x:Name="ProfilesListBox"
+                 ItemsSource="{Binding Entries}">
+            <ListBox.Styles>
+                <Style Selector="ListBoxItem:selected ContentPresenter">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </ListBox.Styles>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="16"
+                            CornerRadius="16"
+                            Background="#ffffff"
+                            BorderBrush="#EAEAEA"
+                            BorderThickness="1"
+                            PointerPressed="UserCodeEntry_OnPressed"
+                            Height="96"
+                            Cursor="Hand">
+                        <StackPanel>
+                            <Grid ColumnDefinitions="*,*">
+                                <Label Grid.Column="0"
+                                       Foreground="#000000"
+                                       FontSize="20"
+                                       FontWeight="Bold"
+                                       Content="{Binding Name}"/>
+                                <Label Grid.Column="1" 
+                                       Foreground="#000000"
+                                       HorizontalAlignment="Right"
+                                       FontSize="16"
+                                       FontWeight="Medium"
+                                       Content="{Binding Code}"/>
+                            </Grid>
+                            <ProgressBar Margin="0,24,0,0" 
+                                         Height="8"
+                                         Minimum="0"
+                                         Maximum="30"
+                                         Value="{Binding RemainingSeconds}"
+                                         Background="#F5F5F5"
+                                         Foreground="#8FAFFF"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                CornerRadius="16"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                BoxShadow="0 4 8 0 #CACACA"
+                Background="#ffffff"
+                Cursor="Hand"
+                Padding="16"
+                x:Name="NewCodeButton"
+                PointerReleased="NewCodeButton_OnPointerReleased">
+            <TextBlock FontWeight="Medium"
+                       FontSize="16"
+                       Foreground="#000000"
+                       Text="New Profile"/>
+        </Border>
+        
+        <Border Grid.Row="1"
+                Grid.Column="1"
+                CornerRadius="16"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                BoxShadow="0 4 8 0 #CACACA"
+                Background="#ffffff"
+                Cursor="Hand"
+                Padding="16"
+                IsVisible="{Binding IsShowCodeCopied}">
+            <TextBlock FontWeight="Medium"
+                       FontSize="16"
+                       Foreground="#000000"
+                       Text="Code copied!"/>
+        </Border>
+    </Grid>
+</Window>

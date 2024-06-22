@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:ChronOTP.DesktopApplication.ViewModels"
+        mc:Ignorable="d"
+        d:DesignWidth="450" 
+        d:DesignHeight="300"
+        Width="450"
+        Height="300"
+        MinWidth="450"
+        MinHeight="300"
+        x:Class="ChronOTP.DesktopApplication.Views.NewProfileWindow"
+        x:DataType="viewModels:NewProfileWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="New Profile">
+    <Border Padding="16"
+            Background="#EFEFEF">
+        <Grid RowDefinitions="*,auto"
+              ColumnDefinitions="*">
+            <StackPanel Grid.Row="0">
+                <StackPanel.Styles>
+                    <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+                        <Setter Property="Background" Value="#ffffff"/>
+                    </Style>
+                    <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+                        <Setter Property="Background" Value="#ffffff"/>
+                    </Style>
+                    <Style Selector="TextBox:pointerover">
+                        <Setter Property="Foreground" Value="#000000"/>
+                        <Setter Property="CaretBrush" Value="#000000"/>
+                    </Style>
+                    <Style Selector="TextBox:focus">
+                        <Setter Property="Foreground" Value="#000000"/>
+                        <Setter Property="CaretBrush" Value="#000000"/>
+                    </Style>
+                </StackPanel.Styles>
+                <Label Foreground="#000000"
+                       FontSize="14"
+                       FontWeight="Medium"
+                       Content="Display name" />
+                <TextBox x:Name="ProfileNameTextBox"
+                         BorderThickness="0"
+                         Background="#ffffff"
+                         Foreground="#000000"
+                         CornerRadius="4"
+                         VerticalContentAlignment="Center"
+                         Text="{Binding DisplayName}"/>
+                <Label Foreground="#000000"
+                       FontSize="14"
+                       FontWeight="Medium"
+                       Margin="0,16,0,0"
+                       Content="Secret key" />
+                <TextBox x:Name="SecretKeyTextBox"
+                         BorderThickness="0"
+                         CornerRadius="4"
+                         Foreground="#000000"
+                         Background="#ffffff"
+                         VerticalContentAlignment="Center"
+                         Text="{Binding SecretKey}"/>
+            </StackPanel>
+            <Border Grid.Row="1"
+                    CornerRadius="16"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Top"
+                    BoxShadow="0 4 8 0 #CACACA"
+                    Background="#ffffff"
+                    Cursor="Hand"
+                    Padding="8"
+                    PointerReleased="InputElement_OnPointerReleased">
+                <TextBlock FontWeight="Medium"
+                           HorizontalAlignment="Center"
+                           FontSize="16"
+                           Foreground="#000000"
+                           Text="Create Profile"/>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

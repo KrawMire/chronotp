@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChronOTP.DesktopApplication", "ChronOTP.DesktopApplication\ChronOTP.DesktopApplication.csproj", "{EA840815-4419-48AC-AC6C-B7F40725E70C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChronOTP.Core", "ChronOTP.Core\ChronOTP.Core.csproj", "{135D23C1-D960-4AED-8A43-A22F9B4FC20E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChronOTP.Infrastructure", "ChronOTP.Infrastructure\ChronOTP.Infrastructure.csproj", "{3728E21F-D66C-44C4-9F52-578E7316727C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{D9537E74-7B8F-4539-A826-AB5E6A7A6115}"
+	ProjectSection(SolutionItems) = preProject
+		build-osx.sh = build-osx.sh
+		Info.plist = Info.plist
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA840815-4419-48AC-AC6C-B7F40725E70C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA840815-4419-48AC-AC6C-B7F40725E70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA840815-4419-48AC-AC6C-B7F40725E70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA840815-4419-48AC-AC6C-B7F40725E70C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{135D23C1-D960-4AED-8A43-A22F9B4FC20E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{135D23C1-D960-4AED-8A43-A22F9B4FC20E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{135D23C1-D960-4AED-8A43-A22F9B4FC20E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{135D23C1-D960-4AED-8A43-A22F9B4FC20E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3728E21F-D66C-44C4-9F52-578E7316727C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3728E21F-D66C-44C4-9F52-578E7316727C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3728E21F-D66C-44C4-9F52-578E7316727C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3728E21F-D66C-44C4-9F52-578E7316727C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
